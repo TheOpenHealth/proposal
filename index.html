@@ -1,3 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Non-Profit Health Insurance Protocol - RFC</title>
+    <style>
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+        }
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 2px solid #0d9488;
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 28px;
+            margin-bottom: 0.2em;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 18px;
+            font-style: italic;
+        }
+        h2 {
+            color: #0d9488;
+            font-size: 22px;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            border-left: 4px solid #0d9488;
+            padding-left: 10px;
+        }
+        a { color: #0d9488; }
+        h3 {
+            color: #334155;
+            font-size: 18px;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        p, ul {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        ol { margin-top: 0; margin-bottom: 1em; }
+        .callout {
+            background-color: #e2e8f0;
+            border-left: 4px solid #64748b;
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin: 1.5em 0;
+            font-size: 15px;
+        }
+        .formula {
+            font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+            background-color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        code { font-family: 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 0.92em; background: #f1f5f9; padding: 1px 4px; border-radius: 3px; }
+        .diagram { margin: 1.5em 0; }
+        .diagram svg { width: 100%; height: auto; display: block; }
+        .caption { font-size: 14px; color: #64748b; text-align: center; margin-top: 0.5em; }
+        .table-wrap { overflow-x: auto; }
+        table { border-collapse: collapse; width: 100%; font-size: 15px; }
+        th, td { border: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background-color: #f1f5f9; color: #0f172a; }
+        .intro {
+            width: min(1200px, calc(100vw - 40px));
+            margin: 0 auto 32px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+            color: #f0fdfa;
+            padding: 40px 48px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.25);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+        .intro h2 {
+            color: #ccfbf1;
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .intro p:first-of-type::first-letter {
+            font-size: 2.6em;
+            float: left;
+            line-height: 0.85;
+            margin: 6px 10px 0 0;
+            color: #5eead4;
+        }
+        .intro p:last-child { margin-bottom: 0; }
+        .intro a { color: #5eead4; text-decoration: underline; }
+        @media (max-width: 600px) {
+            .intro { padding: 24px 20px; font-size: 17px; width: calc(100vw - 20px); }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
 <body>
-This is a page
+
+    <div class="header">
+        <h1>Open Non-Profit Health Insurance Protocol</h1>
+    </div>
+
+    <div class="intro">
+        <h2>Introduction [Human]:</h2>
+        <p>This is a call to action. We are looking for people who would want to openly fix the Health Insurance system in the world. The current Private/For-Profit Health Insurance solutions have "players" incentives completely unaligned: A Health Insurer wants to increase profit and to do so increasingly push to <a href="https://www.cbsnews.com/news/state-of-denial-how-insurance-companies-impact-health-care-today/">deny as many claims as they can</a>.</p>
+        <p>The idea of this project is to build a Non-profit org/foundation that leverages the descentralized and automated nature of public blockchain technologies to create a self-governed Health Insurance network.  There is still a lot of things to questions to answer and things to solve. But we are looking for people interested in helping define, build and deploy this in the open. <br> We are looking for "CAN DO-ers", people who want to help solve the problems as they arise. We understand that it is a daunting task full of legal, technical and operational landmines. But we believe society has all the capabilities to make this a reality. </p>
+   <h3>What are the next steps?</h3> 
+<p>Right now we are defining the mechanics/policies of the process. What you see in this document is the initial proposal. So immediate next steps would be: </p>
+   <ul>
+<li>See how much traction the idea has, get the conversation started on <a href="https://github.com/TheOpenHealth/proposal/issues">the Github page</a> and maybe create other channels.</li>
+<li>Establish a <a href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization">DAO</a>, to formalize the definition of the project.</li>
+<li>Continue defining the processes, actors, requirements and legal framework of the project (e.g., establish required legal entities).</li>
+</ul>
+
+<p>
+The rest of this document was generated with the help of AI, after a long session of brainstorming to define an initial framework of how the Open Health Insurance system could work. This should serve as an idea of where we want to go, but should be taken as what it is, a very initial draft of the mechanisms and ideas we want to use to solve the Health Insurance problem.<p>
+    </div>
+
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p>We are aiming to disrupt the health insurance space by building a global, non-profit mutual insurance fund that is owned and governed by the very people it covers. Traditional insurers profit by collecting premiums, rejecting risky applicants, and denying claims. We remove that conflict of interest entirely: there are no shareholders to pay, nobody is turned away, and every dollar of premiums stays in the pool to serve members.</p>
+        <p>The mechanics are simple. Members pay a monthly premium in digital dollars into a shared fund. Idle capital in the fund is put to work earning interest, which covers the cost of running the system rather than being extracted as profit. When a member gets sick, their claim is reviewed by a randomly selected panel of independent, vetted medical professionals who are financially rewarded for honest judgments and penalized for dishonest ones. Approved claims are paid out directly and automatically. Members who stay healthy and loyal are not left empty-handed either: the longer they participate, the larger the coverage they unlock and the greater the share of their contributions they can withdraw upon retirement.</p>
+        <p>Why this is a good idea: health insurance is a multi-trillion-dollar industry whose core product, pooling risk, is fundamentally a trust and accounting problem. Today that trust is rented from expensive intermediaries. By making the fund's balance sheet fully transparent and its rules enforced automatically, we can offer coverage at a fraction of the overhead, reach the billions of people that incumbents ignore, and align every participant, from members to medical reviewers, around the same goal: a solvent, fair, and lasting safety net.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Core Architecture & Flow of Funds</h2>
+        
+        <h3>1.1. The General Pool and Yield Generation</h3>
+        <p>All user premiums are collected in USDC and deposited into a single, global <strong>General Pool</strong>. To ensure capital efficiency and long-term solvency, idle capital in the General Pool is dynamically deployed to blue-chip DeFi lending markets (e.g., Aave, Compound) to generate interest. The protocol exclusively utilizes USDC for daily operations to shield users from cryptocurrency volatility.</p>
+        
+        <h3>1.2. Individual Accounting & Claim Multiples</h3>
+        <p>While funds are pooled globally, the protocol maintains strict on-chain accounting of each user's contributions. A user's maximum claim allowance is dynamically calculated as a multiple (e.g., 10x to 50x) of their accumulated account balance. This multiple scales positively with the user's tenure in the protocol, heavily incentivizing long-term participation.</p>
+        
+        <h3>1.3. Socialized Security & Insolvency Mechanisms</h3>
+        <p>In the event of a DeFi protocol exploit resulting in a loss of yield-bearing assets, the losses are socialized across the protocol, proportionally reducing user accounting balances. If approved claims exceed the available liquid USDC, payouts enter a strict First-In-First-Out (FIFO) queue, ensuring systemic stability without defaulting on coverage.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. User Lifecycle & Mechanics</h2>
+
+        <h3>2.1. Onboarding & Risk Assessment</h3>
+        <p>The protocol guarantees inclusivity; no user is rejected. During onboarding, users complete a zkKYC process (e.g., zkME) for Sybil resistance and submit initial medical documentation. Evaluators review these documents strictly to determine the user's initial risk profile, which the smart contract maps to a specific monthly premium tier. Premium tiers are further adjusted by a DAO-governed regional multiplier to account for geographic disparities in healthcare costs.</p>
+
+        <h3>2.2. Missed Payments</h3>
+        <p>If a user misses a monthly contribution, the protocol deducts the equivalent amount from their accumulated accounting balance. This inherently reduces their available claim multiple. If the accounting balance is completely depleted by missed payments, the account is automatically invalidated.</p>
+
+        <h3>2.3. The "Good Health" Loyalty Withdrawal</h3>
+        <p>To incentivize health and long-term commitment, users who rarely claim can execute a one-time withdrawal upon retirement or account closure. The permissible withdrawal percentage scales with the age of the account (capped at a maximum, e.g., 80%). Exercising this option permanently closes the account and invalidates the insurance coverage.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Claims & The Evaluator Network</h2>
+
+        <h3>3.1. Case Submission & Data Privacy</h3>
+        <p>To prevent claim spam, a non-refundable submission fee is deducted directly from the user's accumulated balance when a claim is filed. Medical data is never stored publicly on-chain. The claimer retains full ownership of their medical records, which are stored encrypted off-chain. The system generates encrypted data packages utilizing the specific public keys of the randomly assigned medical evaluators, ensuring strict end-to-end privacy.</p>
+
+        <h3>3.2. Evaluator Consensus & Game Theory</h3>
+        <p>Claims are judged by a randomly selected panel of evaluators. Evaluators are vetted medical professionals (approved by the DAO) who have passed zkKYC and staked a financial bond. The protocol utilizes a Schelling-point consensus mechanism:</p>
+        <ul>
+            <li>Evaluators vote to Accept or Reject based on industry-standard guidelines (e.g., ICD-10 codes).</li>
+            <li>Evaluators who vote with the majority are compensated via the General Pool's generated yield.</li>
+            <li>Evaluators who vote against the majority face slashing of their staked bond and a reduction in future assignments.</li>
+            <li>An appeal process exists to catch malicious majorities and ensure fairness.</li>
+        </ul>
+        
+        <h3>3.3. Payout Routing</h3>
+        <p>Upon a successful majority vote, the smart contract automatically releases the approved USDC funds directly to the claimer as a refund, simplifying the integration without requiring global medical providers to adopt web3 infrastructure.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Governance & Protocol Security</h2>
+
+        <h3>4.1. Quadratic Voting</h3>
+        <p>The protocol is governed by a DAO composed of protocol participants. To prevent monopolization by wealthy actors ("whales"), governance voting power is calculated using Quadratic Voting. This ensures that users with skin in the game have a voice, but prevents capital dominance.</p>
+
+        <h3>4.2. Upgradability & Emergency Controls</h3>
+        <p>Passed DAO proposals automatically trigger immutable smart contract upgrades. However, recognizing the inherent risks of smart contracts, the protocol employs a Multi-Sig Guardian Wallet controlled by trusted ecosystem actors. This wallet holds the strict, limited capability to trigger an emergency "pause" on the protocol to secure funds during a zero-day exploit.</p>
+        
+        <h3>4.3. Solving the Cold Start Problem</h3>
+        <p>To protect the nascent protocol from being drained by early claims, the maximum allowable claim is hard-capped at a dynamically phased percentage of the Total Value Locked (TVL). For example, a single claim cannot exceed 1% of the General Pool's liquidity during the protocol's bootstrapping phase.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Technical Implementation Details</h2>
+        <p>This section records, in one place, every design decision reached during the initial design discussions. It is intentionally more detailed than the previous sections and is aimed at engineers, auditors, and reviewers who want to understand exactly how the protocol behaves. Where a concrete number is given (e.g., "80%", "1% of TVL"), it should be read as the <em>initial proposed value</em>: all such parameters are protocol constants that the DAO can adjust.</p>
+
+        <h3>5.1. Smart Contract Suite &amp; Asset Management</h3>
+        <p>The core logic will be implemented as a suite of EVM-compatible smart contracts. Responsibilities are split as follows:</p>
+        <ul>
+            <li><strong>Accounts Contract</strong> &mdash; per-user ledger: accumulated contribution balance, tenure (number of monthly contributions made), premium tier, region, account status.</li>
+            <li><strong>General Pool / Treasury Contract</strong> &mdash; custody of all USDC; interfaces with lending markets (Aave, Compound) to deposit idle capital and harvest yield; maintains the FIFO payout queue.</li>
+            <li><strong>Claims Contract</strong> &mdash; case creation, submission fee, random evaluator selection, vote tallying, appeals, payout instruction.</li>
+            <li><strong>Evaluator Registry</strong> &mdash; DAO-approved evaluators, their bonds, reputation scores and assignment weights.</li>
+            <li><strong>Governance Contract</strong> &mdash; quadratic voting, proposal execution, parameter storage.</li>
+            <li><strong>Guardian Multi-Sig</strong> &mdash; emergency pause only (see 5.11).</li>
+        </ul>
+        <p>The protocol operates exclusively in <strong>USDC</strong> for deposits, accounting, evaluator rewards and payouts, so that premiums and payouts are always expressed in a stable, fiat-equivalent unit. The DAO may later authorise the treasury to hold other crypto-assets as part of a diversified investment strategy, but that is explicitly out of scope for day-to-day operations and for this RFC.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow of funds diagram">
+                <defs>
+                    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker>
+                </defs>
+                <!-- Members -->
+                <rect x="20" y="40" width="150" height="60" rx="8" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+                <text x="95" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Members</text>
+                <text x="95" y="86" text-anchor="middle" font-size="12" fill="#334155">monthly premium (USDC)</text>
+                <!-- General Pool -->
+                <rect x="300" y="20" width="220" height="100" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="3"/>
+                <text x="410" y="50" text-anchor="middle" font-size="15" font-weight="bold" fill="#0d9488">General Pool</text>
+                <text x="410" y="72" text-anchor="middle" font-size="12" fill="#334155">100% of all premiums</text>
+                <text x="410" y="90" text-anchor="middle" font-size="12" fill="#334155">+ yield + slashed bonds</text>
+                <text x="410" y="108" text-anchor="middle" font-size="12" fill="#334155">&minus; payouts &minus; evaluator fees</text>
+                <!-- DeFi -->
+                <rect x="650" y="40" width="150" height="60" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+                <text x="725" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Aave / Compound</text>
+                <text x="725" y="86" text-anchor="middle" font-size="12" fill="#334155">idle capital earns yield</text>
+                <!-- Ledger -->
+                <rect x="20" y="180" width="230" height="90" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                <text x="135" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Individual Ledger</text>
+                <text x="135" y="225" text-anchor="middle" font-size="12" fill="#334155">accounting record only</text>
+                <text x="135" y="243" text-anchor="middle" font-size="12" fill="#334155">balance &middot; tenure &middot; tier</text>
+                <text x="135" y="261" text-anchor="middle" font-size="12" fill="#334155">(no USDC held here)</text>
+                <!-- Claimer / Evaluators -->
+                <rect x="300" y="190" width="220" height="70" rx="8" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+                <text x="410" y="215" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Approved Claim Payout</text>
+                <text x="410" y="235" text-anchor="middle" font-size="12" fill="#334155">refund to claimer (FIFO queue)</text>
+                <rect x="590" y="190" width="210" height="70" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+                <text x="695" y="215" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Evaluator Rewards</text>
+                <text x="695" y="235" text-anchor="middle" font-size="12" fill="#334155">paid per correctly judged case</text>
+                <!-- arrows -->
+                <line x1="170" y1="70" x2="300" y2="70" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+                <line x1="520" y1="60" x2="650" y2="60" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+                <line x1="650" y1="85" x2="520" y2="85" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+                <text x="585" y="52" text-anchor="middle" font-size="11" fill="#475569">deposit</text>
+                <text x="585" y="100" text-anchor="middle" font-size="11" fill="#475569">yield</text>
+                <line x1="95" y1="100" x2="95" y2="180" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+                <text x="105" y="145" font-size="11" fill="#475569">credits balance</text>
+                <line x1="410" y1="120" x2="410" y2="190" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+                <line x1="480" y1="120" x2="660" y2="190" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+            </svg>
+            <p class="caption">Figure 1 &mdash; Flow of funds. Every premium goes into a single General Pool; the "individual pool" is purely an accounting record.</p>
+        </div>
+
+        <h3>5.2. The Individual Ledger vs. the General Pool</h3>
+        <p>An early design question was whether each member holds a personal pool of funds. The answer is <strong>no</strong>. All USDC contributed by members is deposited into the single General Pool. Each member's "individual pool" is an on-chain accounting record (<code>balance</code>) that tracks how much they have contributed and not yet consumed. Pooling all liquidity maximises the capital deployed to yield markets and makes the protocol's solvency a single, transparent number. The ledger is still essential: it is the basis for the member's claim ceiling, their loyalty withdrawal, their missed-payment buffer, and their governance weight.</p>
+
+        <h3>5.3. Premiums, Contributions &amp; Regional Multipliers</h3>
+        <p>Contributions accrue <strong>monthly</strong>. Members may optionally make additional voluntary contributions at any time; these are credited to their balance in the same way and increase their claim ceiling. The monthly premium for a member is computed on-chain as:</p>
+        <p class="formula">premium = baseRate(tier) &times; regionalMultiplier(region)</p>
+        <ul>
+            <li><strong>Tier</strong> is assigned at onboarding from the evaluators' medical assessment of the questionnaire and documentation supplied by the applicant (see 5.4). Age is one of the inputs to the tier.</li>
+            <li><strong>Regional multiplier</strong> is a DAO-governed parameter per jurisdiction (derived from zkKYC), reflecting the macro cost of healthcare in that region. Because payouts are a multiple of what the member has contributed, regional cost differences are largely self-balancing; the multiplier fine-tunes the remainder.</li>
+        </ul>
+
+        <h3>5.4. Onboarding: Everyone Is Accepted</h3>
+        <p>The protocol never rejects an applicant on medical grounds; the medical assessment affects only the <em>price</em>, never eligibility. The onboarding flow is:</p>
+        <ol>
+            <li>Applicant completes zkKYC (see 5.9) and receives an on-chain proof of a unique, verified identity.</li>
+            <li>Applicant fills out a health questionnaire and attaches supporting documentation, encrypted client-side.</li>
+            <li>A random panel of evaluators reviews the documentation and returns a structured medical risk classification.</li>
+            <li>The smart contract maps that classification to a premium tier programmatically.</li>
+        </ol>
+        <div class="callout"><strong>Evaluators are not underwriters.</strong> Evaluators never decide amounts, percentages, multiples or premiums. They answer only medical questions: "What is this applicant's initial health state?" and "Is this claim medically valid and covered under the adopted standard?" All financial consequences are derived from protocol parameters, removing human bias from pricing.</div>
+
+        <h3>5.5. Claim Ceiling: Tenure-Based Multiples and the TVL Cap</h3>
+        <p>A member's maximum claimable amount is bounded by two independent limits; the lower of the two applies:</p>
+        <p class="formula">maxClaim = min( balance &times; multiple(tenure), &nbsp; TVL &times; capPct(phase) )</p>
+        <ul>
+            <li><strong>Tenure multiple.</strong> <code>multiple(tenure)</code> starts low (e.g., 10&times;) for new accounts and rises with the number of monthly contributions made, up to a ceiling (e.g., 50&times;). This blocks "hit-and-run" attacks in which someone pays one premium and files a large claim, and rewards long-term participation. Any reduction of <code>balance</code> (missed payments, submission fees, loyalty withdrawal) reduces the ceiling proportionally.</li>
+            <li><strong>TVL cap (cold-start protection).</strong> No single claim may exceed a fixed percentage of the General Pool's Total Value Locked. The percentage is phased by the DAO as the pool grows. Illustrative bootstrap value: in year one, with roughly $60,000 locked, a 1% cap means no claim can exceed $600. This makes it mathematically impossible for a single early claim to drain the pool; coverage scales up automatically with adoption.</li>
+        </ul>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claim multiple grows with tenure">
+                <line x1="70" y1="210" x2="780" y2="210" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="70" y1="210" x2="70" y2="30" stroke="#94a3b8" stroke-width="2"/>
+                <text x="425" y="245" text-anchor="middle" font-size="12" fill="#475569">tenure (number of monthly contributions)</text>
+                <text x="20" y="120" text-anchor="middle" font-size="12" fill="#475569" transform="rotate(-90 20 120)">claim multiple</text>
+                <text x="60" y="214" text-anchor="end" font-size="11" fill="#475569">10&times;</text>
+                <text x="60" y="54" text-anchor="end" font-size="11" fill="#475569">50&times;</text>
+                <line x1="70" y1="50" x2="780" y2="50" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+                <path d="M70 200 C 250 190, 380 110, 520 60 S 700 50, 780 50" fill="none" stroke="#0d9488" stroke-width="3"/>
+                <text x="180" y="185" font-size="11" fill="#0d9488">new member: low multiple</text>
+                <text x="560" y="42" font-size="11" fill="#0d9488">long-tenure member: ceiling multiple</text>
+                <text x="130" y="228" text-anchor="middle" font-size="11" fill="#475569">month 1</text>
+                <text x="780" y="228" text-anchor="middle" font-size="11" fill="#475569">years</text>
+            </svg>
+            <p class="caption">Figure 2 &mdash; Illustrative shape of <code>multiple(tenure)</code>. Exact curve and bounds are DAO parameters.</p>
+        </div>
+
+        <h3>5.6. Missed Payments &amp; Lazy Accounting</h3>
+        <p>When a monthly contribution is not paid, the protocol does not suspend coverage immediately. Instead it <strong>self-funds the premium from the member's own balance</strong>: the missed amount is deducted from <code>balance</code>, which in turn lowers the claim ceiling. This behaves as an automatic, mathematically defined grace period whose length is proportional to what the member has already put in. When a contribution can no longer be covered because the balance is exhausted, the account is <strong>cancelled and invalidated</strong>.</p>
+        <p>EVM contracts cannot wake themselves on a schedule. Rather than relying on an external automation network (e.g., Chainlink Automation, Gelato) to touch every account monthly, missed-payment deductions are computed <strong>lazily</strong>: on the member's next interaction (deposit, claim, vote, withdrawal), the contract computes how many billing periods have elapsed since the last settlement, applies the corresponding deductions, and updates tenure and status. Because the rule is deterministic, the "true" state of any account can be read at any time by simulating the settlement without a transaction.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Missed payment handling">
+                <defs><marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+                <g font-size="12" fill="#0f172a">
+                    <rect x="20" y="60" width="150" height="70" rx="8" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+                    <text x="95" y="90" text-anchor="middle" font-weight="bold">Month due</text>
+                    <text x="95" y="110" text-anchor="middle">premium not paid</text>
+                    <rect x="230" y="60" width="170" height="70" rx="8" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="315" y="90" text-anchor="middle" font-weight="bold">Deduct from balance</text>
+                    <text x="315" y="110" text-anchor="middle">claim ceiling shrinks</text>
+                    <rect x="460" y="20" width="150" height="60" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+                    <text x="535" y="45" text-anchor="middle" font-weight="bold">balance &gt; 0</text>
+                    <text x="535" y="65" text-anchor="middle">coverage continues</text>
+                    <rect x="460" y="110" width="150" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                    <text x="535" y="135" text-anchor="middle" font-weight="bold">balance = 0</text>
+                    <text x="535" y="155" text-anchor="middle">account cancelled</text>
+                    <rect x="660" y="60" width="140" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                    <text x="730" y="90" text-anchor="middle" font-weight="bold">Applied lazily</text>
+                    <text x="730" y="110" text-anchor="middle">on next interaction</text>
+                </g>
+                <line x1="170" y1="95" x2="230" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr2)"/>
+                <line x1="400" y1="85" x2="460" y2="55" stroke="#475569" stroke-width="2" marker-end="url(#arr2)"/>
+                <line x1="400" y1="105" x2="460" y2="135" stroke="#475569" stroke-width="2" marker-end="url(#arr2)"/>
+            </svg>
+            <p class="caption">Figure 3 &mdash; Missed contributions consume the member's own balance until it reaches zero.</p>
+        </div>
+
+        <h3>5.7. The "Good Health" Loyalty Withdrawal</h3>
+        <p>Member contributions generally remain in the pool permanently; this is insurance, not a savings account. The one exception is a <strong>single, account-closing withdrawal</strong> available to members who have rarely or never claimed. Two rules govern it:</p>
+        <ul>
+            <li>The withdrawable percentage of the remaining <code>balance</code> <strong>increases with the age of the account</strong>, measured specifically as the number of monthly contributions made (not calendar time).</li>
+            <li>The percentage is <strong>capped at a maximum</strong>, proposed at <strong>80%</strong>.</li>
+        </ul>
+        <p><strong>Worked example.</strong> A member joins at age 20 and contributes $100 every month. Over 60 years they make 720 contributions totalling $72,000 and never file a claim. At age 80 they may elect to withdraw up to 80% of their balance, i.e. $57,600, with the remaining 20% staying in the pool for the community. (This ignores any adjustments from socialized losses or fees.)</p>
+        <p>Properties of the withdrawal:</p>
+        <ul>
+            <li>It is <strong>one-time</strong> and <strong>irrevocable</strong>: executing it permanently closes the account and terminates coverage.</li>
+            <li>Because the withdrawn amount leaves the member's balance, their claim ceiling collapses accordingly; the two are the same number.</li>
+            <li>It functions economically as a loyalty / retirement bonus and aligns members with staying healthy and staying in the system for decades.</li>
+        </ul>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Withdrawable percentage grows with account age">
+                <line x1="70" y1="210" x2="780" y2="210" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="70" y1="210" x2="70" y2="30" stroke="#94a3b8" stroke-width="2"/>
+                <text x="425" y="245" text-anchor="middle" font-size="12" fill="#475569">monthly contributions made</text>
+                <text x="20" y="120" text-anchor="middle" font-size="12" fill="#475569" transform="rotate(-90 20 120)">withdrawable %</text>
+                <text x="60" y="214" text-anchor="end" font-size="11" fill="#475569">0%</text>
+                <text x="60" y="66" text-anchor="end" font-size="11" fill="#475569">80%</text>
+                <line x1="70" y1="62" x2="780" y2="62" stroke="#dc2626" stroke-dasharray="6 4"/>
+                <text x="775" y="56" text-anchor="end" font-size="11" fill="#dc2626">maximum cap (80%)</text>
+                <path d="M70 210 C 200 205, 330 140, 470 90 S 650 62, 780 62" fill="none" stroke="#0d9488" stroke-width="3"/>
+                <circle cx="740" cy="63" r="5" fill="#0d9488"/>
+                <text x="735" y="90" text-anchor="end" font-size="11" fill="#0f172a">720 contributions (60 yrs) &rarr; 80%</text>
+                <text x="130" y="228" text-anchor="middle" font-size="11" fill="#475569">join</text>
+            </svg>
+            <p class="caption">Figure 4 &mdash; Illustrative loyalty withdrawal curve. The rate of increase and the cap are DAO parameters.</p>
+        </div>
+
+        <h3>5.8. Claim Lifecycle</h3>
+        <ol>
+            <li><strong>Submission.</strong> The claimer opens a case and a non-refundable <strong>submission fee</strong> is deducted from their ledger balance (never from a separate wallet, so no extra liquidity is needed during a medical emergency). The fee deters frivolous or spam claims.</li>
+            <li><strong>Evidence.</strong> The claimer attaches event information and evidence; the provider (hospital, doctor) can attach their own evidence. Together these form the <em>case</em>. All files are encrypted client-side and stored off-chain; only content hashes are recorded on-chain.</li>
+            <li><strong>Evaluator selection.</strong> The Claims Contract randomly selects <em>N</em> evaluators (initially <em>N</em> = 3) from the registry, weighted by reputation score. Randomness must be sourced from a verifiable source (e.g., a VRF) so that neither claimers nor evaluators can predict or influence the panel.</li>
+            <li><strong>Key distribution.</strong> The claimer's client fetches the public keys of the selected evaluators and produces one encrypted package per evaluator (e.g., three encrypted <code>.zip</code> archives). See 5.10.</li>
+            <li><strong>Voting.</strong> Each evaluator reviews the package against the DAO-adopted ICD-10 ruleset and votes <em>Accept</em> or <em>Reject</em>. Votes should be committed as hashes and revealed after the voting window closes (commit-reveal) so evaluators cannot copy each other.</li>
+            <li><strong>Resolution.</strong> The majority outcome is final unless appealed. Evaluators who voted with the majority are paid from the General Pool; those who voted against it lose reputation and may be slashed (5.11).</li>
+            <li><strong>Payout.</strong> On acceptance, the payout amount (bounded by <code>maxClaim</code>, 5.5) is released as a <strong>refund directly to the claimer's wallet</strong>. The payout is first drawn against the member's own ledger balance and any remainder against the shared pool. Paying the claimer rather than the provider means hospitals and clinics do not need to adopt web3 infrastructure for the protocol to function; direct-to-provider payment with a vetted provider whitelist is a possible later extension.</li>
+            <li><strong>Liquidity shortfall.</strong> If the pool's liquid USDC is insufficient, the approved payout is placed in a <strong>FIFO queue ordered by approval timestamp</strong> and is paid as premiums and yield replenish the pool. The queue is public, so claimants have clear expectations.</li>
+        </ol>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claim lifecycle">
+                <defs><marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+                <g font-size="12" fill="#0f172a" text-anchor="middle">
+                    <rect x="20" y="30" width="140" height="60" rx="8" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+                    <text x="90" y="55" font-weight="bold">1. Submit</text><text x="90" y="75">fee from balance</text>
+                    <rect x="200" y="30" width="140" height="60" rx="8" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+                    <text x="270" y="55" font-weight="bold">2. Evidence</text><text x="270" y="75">claimer + provider</text>
+                    <rect x="380" y="30" width="140" height="60" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+                    <text x="450" y="55" font-weight="bold">3. Random panel</text><text x="450" y="75">N evaluators (VRF)</text>
+                    <rect x="560" y="30" width="140" height="60" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+                    <text x="630" y="55" font-weight="bold">4. Encrypt</text><text x="630" y="75">1 package / evaluator</text>
+                    <rect x="560" y="140" width="140" height="60" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+                    <text x="630" y="165" font-weight="bold">5. Vote</text><text x="630" y="185">commit &rarr; reveal</text>
+                    <rect x="380" y="140" width="140" height="60" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+                    <text x="450" y="165" font-weight="bold">6. Majority</text><text x="450" y="185">reward / slash</text>
+                    <rect x="380" y="250" width="140" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                    <text x="450" y="275" font-weight="bold">Appeal</text><text x="450" y="295">larger panel</text>
+                    <rect x="200" y="140" width="140" height="60" rx="8" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="270" y="165" font-weight="bold">7. Payout</text><text x="270" y="185">refund to claimer</text>
+                    <rect x="20" y="140" width="140" height="60" rx="8" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="90" y="165" font-weight="bold">8. FIFO queue</text><text x="90" y="185">if pool illiquid</text>
+                </g>
+                <g stroke="#475569" stroke-width="2" marker-end="url(#arr3)">
+                    <line x1="160" y1="60" x2="200" y2="60"/><line x1="340" y1="60" x2="380" y2="60"/><line x1="520" y1="60" x2="560" y2="60"/>
+                    <line x1="630" y1="90" x2="630" y2="140"/><line x1="560" y1="170" x2="520" y2="170"/><line x1="380" y1="170" x2="340" y2="170"/><line x1="200" y1="170" x2="160" y2="170"/>
+                    <line x1="450" y1="200" x2="450" y2="250"/>
+                </g>
+                <path d="M520 280 L 740 280 L 740 170 L 700 170" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arr3)"/>
+                <text x="745" y="235" font-size="11" fill="#475569">re-vote</text>
+            </svg>
+            <p class="caption">Figure 5 &mdash; Claim lifecycle from submission to payout.</p>
+        </div>
+
+        <h3>5.9. Identity: zkKYC for Everyone</h3>
+        <p>Both claimers and evaluators must complete <strong>full KYC</strong>. To avoid the protocol (or a legal entity behind it) custodying personally identifiable information, KYC is performed through a <strong>zero-knowledge KYC provider</strong> such as zkME or an equivalent. The provider verifies identity off-chain and issues a proof that the wallet belongs to a unique, verified human in a given jurisdiction; the contract checks the proof and gates protocol functions on it. This delivers:</p>
+        <ul>
+            <li><strong>Sybil resistance</strong> &mdash; one human, one account; essential for quadratic voting and for the tenure-based rules.</li>
+            <li><strong>Regulatory compliance</strong> &mdash; AML/KYC obligations are met without a central PII database.</li>
+            <li><strong>Region attestation</strong> &mdash; the jurisdiction attribute feeds the regional premium multiplier.</li>
+        </ul>
+
+        <h3>5.10. Data Storage, Security &amp; Sovereignty</h3>
+        <p>The protocol handles three classes of sensitive off-chain data. None of them is ever written to the blockchain in plaintext, and none of them is held by the protocol, a foundation, or any central operator:</p>
+        <div class="table-wrap">
+        <table>
+            <thead><tr><th>Data class</th><th>Owner</th><th>Who may need to read it</th><th>When</th></tr></thead>
+            <tbody>
+                <tr><td>Claimer KYC documents</td><td>Claimer</td><td>zkKYC provider only (produces an on-chain proof; documents are never shared with the protocol)</td><td>Onboarding</td></tr>
+                <tr><td>Claimer medical data (questionnaire, records, claim evidence, provider evidence)</td><td>Claimer</td><td>The randomly selected evaluator panel for that specific assessment or claim</td><td>Onboarding assessment; each claim; appeals</td></tr>
+                <tr><td>Evaluator credentials &amp; KYC documents</td><td>Evaluator candidate</td><td>zkKYC provider; the DAO members (or DAO-elected vetting committee) reviewing the candidate's application</td><td>Evaluator vetting</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p><strong>Where the data lives.</strong> All documents are stored in an <strong>external, distributed, content-addressed storage network</strong> such as IPFS (with Filecoin/Arweave-style persistence, or pinning services chosen by the owner). Files are encrypted <em>before</em> they leave the owner's device, so the storage layer only ever holds ciphertext. The blockchain stores only the content identifiers (CIDs/hashes) needed to prove integrity and to link a file to a case, an application, or an account. This gives three properties at once: no central honeypot of health or identity data, tamper-evidence (a CID changes if a single byte changes), and censorship resistance (any node can serve the ciphertext, none can read it).</p>
+
+        <p><strong>Data sovereignty: the owner is the only key holder.</strong> The guiding principle is that the person the data is about is the sole party able to grant read access, and the protocol never possesses a decryption key. The exact mechanism is <strong>still to be defined</strong>; the initial proposal is a public-key-cryptography scheme that leverages the key pairs participants already hold in their blockchain wallets, so that no additional identity or key infrastructure needs to be introduced:</p>
+        <ol>
+            <li>Each participant (claimer, evaluator, DAO reviewer) has an EVM wallet key pair. The public key is either derivable from on-chain signatures or registered once in the relevant registry contract (an encryption public key, e.g., a secp256k1- or X25519-derived key, following the pattern established by wallet <code>eth_getEncryptionPublicKey</code>-style APIs).</li>
+            <li>The owner encrypts the document set once with a random symmetric content key and uploads the ciphertext to IPFS.</li>
+            <li>When recipients are chosen &mdash; the evaluator panel for a claim or onboarding assessment, or the DAO reviewers for an evaluator application &mdash; the contract publishes the recipients' identities. The owner's client fetches each recipient's public encryption key and produces one <strong>envelope per recipient</strong>: the content key (or the whole package, e.g., one encrypted <code>.zip</code> per recipient) encrypted such that only that recipient's wallet private key can open it.</li>
+            <li>The envelopes are published (on IPFS, referenced on-chain) and each recipient decrypts locally with their wallet. The protocol, non-selected evaluators, storage nodes and the public see only ciphertext.</li>
+            <li>Access is revocable in practice: the owner can re-encrypt the content under a fresh key for future recipients (e.g., an appeal panel), and never has to hand out anything to a party that was not selected.</li>
+        </ol>
+
+        <div class="diagram">
+            <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data sovereignty architecture">
+                <defs><marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+                <g font-size="12" fill="#0f172a" text-anchor="middle">
+                    <rect x="20" y="100" width="160" height="90" rx="8" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+                    <text x="100" y="128" font-weight="bold">Data owner</text><text x="100" y="148">claimer / evaluator</text><text x="100" y="166">wallet key pair</text>
+                    <rect x="300" y="20" width="200" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                    <text x="400" y="48" font-weight="bold">IPFS / distributed storage</text><text x="400" y="68">ciphertext only</text>
+                    <rect x="300" y="115" width="200" height="70" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+                    <text x="400" y="143" font-weight="bold">Smart contracts</text><text x="400" y="163">CIDs + recipient list only</text>
+                    <rect x="300" y="210" width="200" height="70" rx="8" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="400" y="238" font-weight="bold">Per-recipient envelope</text><text x="400" y="258">encrypted to wallet pubkey</text>
+                    <rect x="620" y="60" width="180" height="50" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+                    <text x="710" y="90">Evaluator panel</text>
+                    <rect x="620" y="150" width="180" height="50" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+                    <text x="710" y="180">DAO vetting reviewers</text>
+                    <rect x="620" y="240" width="180" height="50" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                    <text x="710" y="270">Everyone else: no key</text>
+                </g>
+                <g stroke="#475569" stroke-width="2" marker-end="url(#arr4)">
+                    <line x1="180" y1="120" x2="300" y2="60"/>
+                    <line x1="180" y1="145" x2="300" y2="150"/>
+                    <line x1="180" y1="175" x2="300" y2="240"/>
+                    <line x1="500" y1="235" x2="620" y2="95"/>
+                    <line x1="500" y1="245" x2="620" y2="180"/>
+                </g>
+                <text x="235" y="80" text-anchor="middle" font-size="11" fill="#475569">upload encrypted</text>
+                <text x="235" y="140" text-anchor="middle" font-size="11" fill="#475569">register CID</text>
+                <text x="235" y="220" text-anchor="middle" font-size="11" fill="#475569">grant access</text>
+                <text x="560" y="130" text-anchor="middle" font-size="11" fill="#475569">decrypt with</text>
+                <text x="560" y="144" text-anchor="middle" font-size="11" fill="#475569">own wallet key</text>
+            </svg>
+            <p class="caption">Figure 6 &mdash; Data sovereignty model: encrypted at the edge, stored on a distributed network, unlocked only by chosen recipients' wallet keys.</p>
+        </div>
+
+        <p><strong>Special case: KYC.</strong> Identity documents follow an even stricter path. They are shown only to the zkKYC provider, which returns a zero-knowledge proof; neither the protocol nor the DAO ever sees passports or IDs. For evaluator vetting, the DAO reviews <em>professional credentials</em> (licences, certifications) via the envelope mechanism above, while identity itself is established by the zkKYC proof.</p>
+
+        <p><strong>Open questions (TBD).</strong> Which encryption-key derivation to standardise on across wallets; whether to use a threshold/proxy re-encryption scheme (e.g., Lit Protocol-style access control) instead of per-recipient envelopes to reduce client-side work; retention and deletion policy for ciphertext after a case closes; and how a member recovers access to their own data if they lose their wallet key. These will be addressed in a follow-up RFC.</p>
+
+        <h3>5.11. The Evaluator Network: Vetting, Bonds, Reputation, Slashing &amp; Appeals</h3>
+        <p><strong>Vetting.</strong> Becoming an evaluator is permissioned. A candidate submits professional credentials through a secure channel, completes zkKYC, and the DAO votes to approve them. Only approved evaluators may stake and receive assignments.</p>
+        <p><strong>Bond.</strong> Every active evaluator stakes a USDC bond. The bond is the collateral behind honest behaviour and can be partially or fully slashed. Slashed funds are not burned; they flow into the General Pool.</p>
+        <p><strong>Schelling-point consensus.</strong> Because the "correct" answer is the medically justified one under the adopted ICD-10 ruleset, honest evaluators are expected to converge. An evaluator is paid when their vote matches the final majority and penalised when it does not.</p>
+        <p><strong>Reputation &amp; assignment weighting.</strong> Each evaluator carries a score that rises with correct evaluations and falls with incorrect ones. Random selection is weighted by score, so evaluators with a poor record receive fewer cases and therefore less income; a score below a DAO-set threshold suspends the evaluator.</p>
+        <p><strong>Lazy-voting defence.</strong> Majority-matching alone can be gamed by always voting the same way. Three mechanisms counter this: (1) commit-reveal voting hides other votes until the window closes; (2) an <strong>appeal process</strong> lets the claimer (or any member posting a bond) escalate a decision to a larger, freshly drawn panel; if the appeal overturns the original outcome, the original majority is treated as incorrect and slashed; (3) statistical audits over an evaluator's voting history (e.g., anomalous unanimity or near-zero review time) can trigger slashing via DAO proposal.</p>
+        <p><strong>Compensation.</strong> Evaluator rewards are paid out of the General Pool, which is funded by member premiums and yield. Onboarding assessments (5.4) are compensated the same way as claim evaluations.</p>
+
+        <h3>5.12. Medical Standard: ICD-10</h3>
+        <p>To remove ambiguity about what is "covered", the protocol adopts the <strong>ICD-10</strong> classification as its reference standard. The DAO vets and formally approves the version of the catalogue (and any exclusions or additions) that is in force; once adopted, evaluators must reference the relevant codes in their assessment and are bound by it. Changes to the catalogue follow the normal governance process.</p>
+
+        <h3>5.13. Treasury Risk: Socialized Losses &amp; Solvency</h3>
+        <ul>
+            <li><strong>DeFi exposure.</strong> Idle USDC is lent on established money markets (Aave, Compound). The treasury contract holds the yield-bearing receipt tokens and can withdraw liquidity on demand to satisfy payouts.</li>
+            <li><strong>Socialized losses.</strong> If an external protocol suffers an exploit or bad debt and part of the deployed capital is lost, the loss is <strong>socialized</strong>: every member's ledger balance is reduced pro rata (and with it their claim ceiling and withdrawable amount). There is no privileged class of depositors.</li>
+            <li><strong>Reserve fund.</strong> Whether the DAO should set aside a dedicated reserve ("insurance for the insurance fund") is deliberately left to a future DAO decision.</li>
+            <li><strong>Payout queue.</strong> As described in 5.8, approved-but-unfunded payouts are queued FIFO by approval time; the protocol never defaults on an approved claim, it only delays it.</li>
+        </ul>
+
+        <h3>5.14. Governance: Quadratic Voting &amp; Automatic Execution</h3>
+        <p>Every KYC-verified member with a positive ledger balance may vote. To prevent a wealthy actor from buying control, voting power is <strong>quadratic</strong>: the cost of casting <em>v</em> votes on a proposal grows as <em>v</em><sup>2</sup> (equivalently, influence scales with the square root of stake). Combined with zkKYC-enforced uniqueness, this makes vote-splitting across wallets ineffective.</p>
+        <p>The DAO governs, among other things: premium base rates and tiers, regional multipliers, the tenure-multiple curve, the TVL claim cap and its phasing, the loyalty withdrawal curve and cap, the submission fee, evaluator bond size and slashing parameters, panel size <em>N</em>, the ICD-10 catalogue, evaluator approvals, yield venues, and any future reserve or asset-diversification policy.</p>
+        <p><strong>Execution.</strong> A passed proposal is executed <strong>automatically on-chain</strong> (parameter update or contract upgrade through the governance contract), with no human committee required to carry out the DAO's will. A timelock between passing and execution is recommended so members can react to malicious proposals.</p>
+
+        <h3>5.15. Security Posture &amp; Emergency Pause</h3>
+        <p>The protocol will hold significant USDC and must use leading-edge security practice: independent audits before launch and before every upgrade, formal verification of the accounting invariants (e.g., sum of ledger balances never exceeds pool assets plus queued liabilities), a public bug bounty, and minimal external dependencies.</p>
+        <p>Independently of the DAO, a <strong>Guardian Multi-Sig</strong> held by trusted ecosystem actors has exactly one power: to <strong>pause</strong> the protocol (halting deposits, payouts and treasury movements) if a vulnerability or exploit is detected. The multi-sig cannot move funds, change parameters or upgrade contracts; resuming operation, and any remediation, requires a DAO vote. This combines trustless automated governance with the ability to react to a zero-day faster than a voting period allows.</p>
+
+        <h3>5.16. Summary of Initial Parameters</h3>
+        <div class="table-wrap">
+        <table>
+            <thead><tr><th>Parameter</th><th>Initial proposal</th><th>Set by</th></tr></thead>
+            <tbody>
+                <tr><td>Unit of account</td><td>USDC only</td><td>Protocol</td></tr>
+                <tr><td>Contribution cadence</td><td>Monthly, plus optional extra contributions</td><td>Protocol</td></tr>
+                <tr><td>Claim multiple range</td><td>10&times; (new) &rarr; 50&times; (long tenure)</td><td>DAO</td></tr>
+                <tr><td>Single-claim TVL cap</td><td>1% of TVL during bootstrap (e.g., $600 on $60k)</td><td>DAO, phased</td></tr>
+                <tr><td>Loyalty withdrawal cap</td><td>80% of balance; one-time; closes account</td><td>DAO</td></tr>
+                <tr><td>Missed payment</td><td>Deducted from balance; cancel at zero; lazy settlement</td><td>Protocol</td></tr>
+                <tr><td>Submission fee</td><td>Non-refundable, deducted from ledger balance</td><td>DAO</td></tr>
+                <tr><td>Evaluator panel size</td><td>N = 3 (larger on appeal)</td><td>DAO</td></tr>
+                <tr><td>Evaluator entry</td><td>Credentials + zkKYC + DAO approval + bond</td><td>DAO</td></tr>
+                <tr><td>Slashed funds</td><td>Returned to General Pool</td><td>Protocol</td></tr>
+                <tr><td>Medical standard</td><td>ICD-10, DAO-vetted version</td><td>DAO</td></tr>
+                <tr><td>Identity</td><td>zkKYC (e.g., zkME) for claimers and evaluators</td><td>Protocol</td></tr>
+                <tr><td>Data storage</td><td>Encrypted client-side, stored on IPFS-style distributed network; chain holds CIDs only</td><td>Protocol</td></tr>
+                <tr><td>Access control</td><td>Per-recipient envelopes encrypted to wallet public keys (mechanism TBD)</td><td>Protocol</td></tr>
+                <tr><td>Payout routing</td><td>Refund to claimer; FIFO queue when illiquid</td><td>Protocol</td></tr>
+                <tr><td>External losses</td><td>Socialized pro rata across ledger balances</td><td>Protocol</td></tr>
+                <tr><td>Voting</td><td>Quadratic; auto-executed proposals</td><td>Protocol</td></tr>
+                <tr><td>Emergency control</td><td>Guardian multi-sig, pause only</td><td>Protocol</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+
 </body>
+</html>
